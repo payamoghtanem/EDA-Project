@@ -7,3 +7,10 @@ python-dotenv==1.0.0
 psycopg2-binary==2.9.7
 SQLAlchemy==2.0.15
 missingno==0.5.2
+  
+set SCHEMA 'eda';
+
+select kchd.*,kchs."date" ,kchs.price 
+from king_county_house_details kchd 
+left join king_county_house_sales kchs 
+on kchd.id = kchs.house_id;
